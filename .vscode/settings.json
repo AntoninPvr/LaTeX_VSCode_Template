@@ -1,0 +1,74 @@
+{
+    "latex-workshop.view.pdf.external.synctex.command": "synctex",
+    "latex-workshop.view.pdf.external.synctex.args": [
+        "view",
+        "-i",
+        "%LINE%:0:%TEX%",
+        "-o",
+        "%PDF%",
+        "-target",
+        "output"
+    ],
+    // This is the most important setting for internal viewer:
+    "latex-workshop.view.pdf.internal.synctex.keybinding": "double-click",
+    "latex-workshop.latex.outDir": "output",
+    "latex-workshop.latex.auxDir": "temp",
+    "latex-workshop.latex.tools": [
+        {
+        "name": "latexmk",
+        "command": "latexmk",
+        "args": [
+            "-synctex=1",
+            "-interaction=nonstopmode",
+            "-file-line-error",
+            "-pdf",
+            "-outdir=output",
+            "-auxdir=temp",
+            "%DOC%"
+        ],
+        "env": {}
+        },
+        {
+        "name": "DeepClean",
+        "command": "latexmk",
+        "args": [
+            "-C",
+            "-outdir=output",
+            "-auxdir=temp",
+            "%DOC%"
+        ],
+        "env": {}
+        },
+        {
+        "name": "latex_to_odt",
+        "command": "pandoc",
+        "args": [
+            "%DOCFILE%.tex",
+            "-o",
+            "output/%DOCFILE%.odt"
+        ],
+        "env": {}
+        }
+    ],
+    "latex-workshop.latex.recipes": [
+        {
+        "name": "PDF",
+        "tools": [
+            "latexmk"
+        ]
+        },
+        {
+        "name": "Safe PDF (Wipe then Build)",
+        "tools": [
+            "DeepClean",
+            "latexmk"
+        ]
+        },
+        {
+        "name": "Export to ODT",
+        "tools": [
+            "latex_to_odt"
+        ]
+        }
+    ]
+}
