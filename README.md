@@ -15,6 +15,10 @@ This template allows you to compile your latex files in a separate folder, keepi
 
 - I recommend using a dedicated profile for LaTeX in VSCode to avoid conflicts with other extensions. You can create a new profile by going to `File > Preferences > Profiles` and selecting `Create Profile`. Then, you can install the LaTeX Workshop extension in that profile and switch to it when working on LaTeX projects.
 
+- If you want to use `.svg`images in your LaTeX documents, you will need to install `Inkscape` and add it to your system's PATH. This allows `latexmk` to convert `.svg` files to `.pdf` format during compilation.
+
+    - `[System.Environment]::SetEnvironmentVariable("Path", $env:Path + ";C:\Program Files\Inkscape\bin", "Machine")` (for Windows PowerShell)
+
 ## Usage
 
 By default building the project will generate a PDF file that you can open with the previewer.

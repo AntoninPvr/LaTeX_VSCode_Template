@@ -24,6 +24,7 @@
             "-pdf",
             "-outdir=output",
             "-auxdir=temp",
+            "-shell-escape",
             "%DOC%"
         ],
         "env": {}
