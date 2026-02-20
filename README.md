@@ -19,6 +19,10 @@ This template allows you to compile your latex files in a separate folder, keepi
 
 By default building the project will generate a PDF file that you can open with the previewer.
 
+Go on you `main.tex` file and press `Ctrl + Alt + B` or `Ctrl + S` to build the project. When you are on `.tex` file, the extension will show up on the left side.
+
+![LaTeX Recipe](figures/delete_me_1.png)
+
 You can also generate an `.odt` file by running the `Export to ODT` command from TEX Workshop extension.
 
 The Safe PDF recipe can be used when you have weird behavior with the PDF previewer, it will wipe the output and temp folders before building the project, ensuring a clean build.
